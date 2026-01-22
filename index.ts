@@ -1,4 +1,4 @@
-class QueueHandler {
+class Qpass {
     version = "1.0.0"; // version info
 
     private items: (() => Promise<any>)[] = []; // job queue
@@ -145,4 +145,4 @@ class QueueHandler {
     }
 }
 
-export default QueueHandler;
+export default Qpass;

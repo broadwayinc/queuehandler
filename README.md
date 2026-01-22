@@ -1,6 +1,6 @@
-# QueueHandler
+# Qpass
 
-QueueHandler is a JavaScript/TypeScript queue library for processing tasks sequentially.
+Qpass is a JavaScript/TypeScript queue library for processing tasks sequentially.
 It supports batch execution, error handling options, and progress callbacks.
 
 ## 📌 Getting started
@@ -14,9 +14,9 @@ npm install queuehandler
 ### Basic usage
 
 ```js
-import QueueHandler from "queuehandler";
+import Qpass from "queuehandler";
 
-const queue = new QueueHandler();
+const queue = new Qpass();
 
 const job1 = () => Promise.resolve("job1 completed");
 const job2 = () => Promise.resolve("job2 completed");
@@ -26,10 +26,10 @@ queue.add([job1, job2]);
 
 ### Option
 
-You can configure options when creating a QueueHandler instance.
+You can configure options when creating a Qpass instance.
 
 ```ts
-const queue = new QueueHandler({
+const queue = new Qpass({
     breakWhenError?: boolean;
     onProgress?: (progress: {
         batchToProcess: number; // Total number of batches remaining
@@ -45,7 +45,7 @@ const queue = new QueueHandler({
 The onProgress callback runs when the queue starts and after each batch is completed.
 
 ```js
-const queue = new QueueHandler({
+const queue = new Qpass({
     batchSize: 2,
     onProgress: (progress) => {
         console.log(progress);
@@ -66,14 +66,14 @@ await queue.add([
 
 ## ❗Handling Errors
 
-QueueHandler lets you choose whether to stop on error or continue execution when an error occurs.
+Qpass lets you choose whether to stop on error or continue execution when an error occurs.
 <br>
 This behavior is controlled via the breakWhenError option.
 
 ### ✅ Continue execution even on errors (breakWhenError: false)
 
 ```js
-const queue = new QueueHandler({
+const queue = new Qpass({
     breakWhenError: false, // default
     onProgress: (progress) => {
         console.log("Completed jobs: ", progress.completed);
@@ -100,7 +100,7 @@ Completed jobs: ["First success", "Second failed ❌", "Third success ✅"]
 ### 🛑 Stop immediately on error (breakWhenError: true)
 
 ```js
-const queue = new QueueHandler({
+const queue = new Qpass({
     breakWhenError: true,
     onProgress: (progress) => {
         console.log(`Completed jobs:: `, progress.completed);
@@ -131,7 +131,7 @@ Execution stopped: Second failed ❌
 ## 📌 Practical Example
 
 ```js
-const queue = new QueueHandler({
+const queue = new Qpass({
     batchSize: 5,
     onProgress: (progress) => {
         console.log(

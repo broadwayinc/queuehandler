@@ -1,4 +1,4 @@
-import QueueHandler from "./index.js";
+import Qpass from "./index.js";
 
 // job creator
 const createJob =
@@ -16,7 +16,7 @@ const createJob =
     };
 
 // test code
-console.log("🚀 QueueHandler test started\n");
+console.log("🚀 Qpass test started\n");
 
 let did2ndTest = false;
 
@@ -34,10 +34,10 @@ const onProgress = ({ batchToProcess, itemsToProcess, completed }) => {
     console.log("---");
 
     if (itemsToProcess === 0) {
-        console.log("🚀 QueueHandler test completed");
+        console.log("🚀 Qpass test completed");
 
         if (!did2ndTest) {
-            console.log("\n🚀 QueueHandler array addition 2nd test started\n");
+            console.log("\n🚀 Qpass array addition 2nd test started\n");
 
             did2ndTest = true;
             testArray();
@@ -45,7 +45,7 @@ const onProgress = ({ batchToProcess, itemsToProcess, completed }) => {
     }
 };
 
-const queue = new QueueHandler({
+const queue = new Qpass({
     breakWhenError: false,
     batchSize: 3,
     onProgress: onProgress,
