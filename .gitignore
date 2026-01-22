@@ -1,0 +1,9 @@
+node_modules/
+
+# Built files
+*.js
+*.js.map
+*.d.ts
+
+# Keep test file
+!test.js

@@ -1,0 +1,16 @@
+{
+  "name": "queuehandler",
+  "version": "1.0.0",
+  "description": "Asynchronous function handler with adjustable concurrency",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+      "test": "echo \"Error: no test specified\" && exit 1",
+      "build": "npx tsc --project tsconfig.json"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+      "typescript": "^5.9.3"
+  }
+}
