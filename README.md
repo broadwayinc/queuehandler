@@ -6,7 +6,7 @@ It supports batch execution, error handling options, and progress callbacks.
 ## 📌 Getting started
 
 ```js
-npm install queuehandler
+npm install qpass
 ```
 
 ## 📌 Usage
@@ -14,7 +14,7 @@ npm install queuehandler
 ### Basic usage
 
 ```js
-import Qpass from "queuehandler";
+import Qpass from "qpass";
 
 const queue = new Qpass();
 

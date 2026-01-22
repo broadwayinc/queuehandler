@@ -1,5 +1,5 @@
 {
-  "name": "queuehandler",
+  "name": "qpass",
   "version": "1.0.0",
   "description": "Asynchronous function handler with adjustable concurrency",
   "main": "index.js",
